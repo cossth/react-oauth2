@@ -12,9 +12,8 @@
     "oauth2",
     "openid",
     "pkce",
-    "aws",
-    "cognito",
-    "gatsby"
+    "implicit flow",
+    "credentials flow"
   ],
   "engines": {
     "node": ">=10"

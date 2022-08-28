@@ -1,6 +1,7 @@
-import { createPKCECodes, PKCECodePair } from './pkce'
-import { toUrlEncoded } from './util'
+import { PKCECodePair, createPKCECodes } from './pkce'
+
 import jwtDecode from 'jwt-decode'
+import { toUrlEncoded } from './util'
 
 export interface AuthServiceProps {
   clientId: string
@@ -160,7 +161,9 @@ export class AuthService<IdTokenType = IdTokenPayload> {
         client_id: clientId,
         post_logout_redirect_uri: redirectUri
       }
-      const url = `${logoutEndpoint || `${provider}/logout`}?${toUrlEncoded(query)}`
+      const url = `${logoutEndpoint || `${provider}/logout`}?${toUrlEncoded(
+        query
+      )}`
       window.location.replace(url)
       return true
     } else {
@@ -202,7 +205,9 @@ export class AuthService<IdTokenType = IdTokenPayload> {
       codeChallengeMethod: 'S256'
     }
 
-    const url = `${authorizeEndpoint || `${provider}/authorize`}?${toUrlEncoded(query)}`
+    const url = `${authorizeEndpoint || `${provider}/authorize`}?${toUrlEncoded(
+      query
+    )}`
     window.location.replace(url)
   }
 
@@ -289,7 +294,7 @@ export class AuthService<IdTokenType = IdTokenPayload> {
 
   startTimer(): void {
     if (!this.isAuthenticated()) {
-      return;
+      return
     }
     const authTokens = this.getAuthTokens()
     const { refresh_token: refreshToken, expires_at: expiresAt } = authTokens

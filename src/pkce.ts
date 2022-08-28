@@ -13,10 +13,7 @@ const randomBytes = (length: number): Uint8Array => {
 }
 
 const base64URLEncode = (data: Uint8Array): string => {
-  return encode(data)
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=/g, '')
+  return encode(data).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '')
 }
 
 const sha256 = async (data: Uint8Array | string): Promise<Uint8Array> => {

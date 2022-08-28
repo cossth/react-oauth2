@@ -1,6 +1,6 @@
 # react-oauth2-pkce
 
-> Authenticate against generic OAuth2 using PKCE
+> Authenticate OAuth2 using PKCE
 
 [![NPM](https://img.shields.io/npm/v/react-oauth2-pkce.svg)](https://www.npmjs.com/package/react-oauth2-pkce) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 

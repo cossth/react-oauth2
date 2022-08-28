@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAuth } from 'react-oauth2-pkce'
+import { useAuth } from '@cossth/react-oauth2'
 
 export const Home = () => {
   const { authService, authTokens } = useAuth()
